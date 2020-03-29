@@ -15,3 +15,4 @@ $ docker-compose up
 |prometheus-sql  | port not exposed |
 
 
+![sample email screenshot](https://raw.githubusercontent.com/gauti038/db-alerting-pipeline/master/email.png)
