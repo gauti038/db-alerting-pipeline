@@ -1,0 +1,56 @@
+version: '3.2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      # - ./mysql/db-dump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_USER: 'root'
+      MYSQL_DATABASE: 'billie'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes' 
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  sqlagent:
+    image: dbhi/sql-agent
+    ports:
+      - 5000
+  prometheus-sql:
+    image: dbhi/prometheus-sql
+    command: -service http://sqlagent:5000 -config prometheus-sql.yml
+    ports:
+      - 8080
+    volumes:
+      - ./prometheus-sql/prometheus-sql.yml:/prometheus-sql.yml
+      - ./prometheus-sql/queries.yml:/queries.yml
+    links:
+      - "sqlagent:sqlagent"
+    depends_on: 
+      - mysql
+  prometheus:
+    image: prom/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/simple.rules:/etc/prometheus/simple.rules
+    links:
+      - "sqlagent:sqlagent"
+  grafana:
+    image: grafana/grafana
+    ports: 
+      - 3000:3000
+    links:
+      - prometheus:prometheus
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    env_file:
+      - ./grafana/config.monitoring
+    

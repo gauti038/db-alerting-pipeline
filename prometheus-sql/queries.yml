@@ -1,0 +1,10 @@
+- incorrect_status_count: # name of a query
+    data-source: alerts # data source
+    sql: >
+        SELECT count(*) FROM invoices WHERE invoices.state = 'processed' and not exists ( select id from invoices_data where invoice_id = invoices.id ) ;
+    interval: 10s # this query is executed every 30 seconds
+- un_processed_data_count:
+    data-source: alerts 
+    sql: >
+        SELECT count(*) from invoices where DATEDIFF(NOW(), created_at) >= 5 ;
+    interval: 10s

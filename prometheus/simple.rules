@@ -1,0 +1,28 @@
+groups:
+- name: billie-example
+  rules:
+
+  # Fires when a processed record is not updated on data table 
+  - alert: IncorrectStatus
+    expr: query_result_incorrect_status_count > 0
+    labels:
+      severity: warning 
+    for: 60s
+    annotations: 
+      summary: "Some processed record(s) are not updated in data table"
+      description: "Run this query on DB to find the records which do not have processed data - 
+                  SELECT * FROM invoices WHERE invoices.state = 'processed' 
+                  and not exists ( select id from invoices_data where invoice_id = invoices.id ) ;"
+  
+  
+  # Fires when record is not processed for more than 5 days 
+  - alert: LongPendingRecords
+    expr: query_result_un_processed_data_count > 0
+    labels: 
+      severity: warning
+    for: 60s
+    annotations: 
+      summary: "Some record(s) are not processed for more than 5 days"
+      description: "Run this query on DB to find the records which are idle for more than 5 days
+                  SELECT count(*) from invoices where DATEDIFF(NOW(), created_at) >= 5 ; "
+

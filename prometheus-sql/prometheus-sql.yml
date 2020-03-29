@@ -1,0 +1,17 @@
+# Defaults keys
+defaults:
+  data-source: alerts
+  query-interval: 5s
+  query-timeout: 5s
+  query-value-on-error: 0
+ 
+# Defined data sources
+data-sources:
+  alerts:
+    driver: mysql
+    properties:
+      host: 'mysql'
+      port: 3306
+      user: 'root'
+      password: ''
+      database: 'billie'
