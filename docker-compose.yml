@@ -3,20 +3,21 @@ version: '3.2'
 services:
   mysql:
     image: mysql:5.7
+    command: --init-file /data/application/init.sql
     ports:
       - 3306:3306
     volumes:
       - ./mysql/data:/var/lib/mysql
-      # - ./mysql/db-dump:/docker-entrypoint-initdb.d
+      - ./mysql/initdb.sql:/data/application/init.sql
     environment:
       MYSQL_USER: 'root'
       MYSQL_DATABASE: 'billie'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes' 
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: [ "CMD", "mysql -u root  -e 'use billie; select 1 from invoices_data limit 1' " ]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 3
   sqlagent:
     image: dbhi/sql-agent
     ports:
@@ -29,8 +30,8 @@ services:
     volumes:
       - ./prometheus-sql/prometheus-sql.yml:/prometheus-sql.yml
       - ./prometheus-sql/queries.yml:/queries.yml
-    links:
-      - "sqlagent:sqlagent"
+    # links:
+    #   - "sqlagent:sqlagent"
     depends_on: 
       - mysql
   prometheus:
@@ -41,16 +42,25 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/simple.rules:/etc/prometheus/simple.rules
-    links:
-      - "sqlagent:sqlagent"
+    # links:
+    #   - "sqlagent:sqlagent"
+    depends_on: 
+      - prometheus-sql
   grafana:
     image: grafana/grafana
     ports: 
       - 3000:3000
-    links:
-      - prometheus:prometheus
+    # links:
+    #   - prometheus:prometheus
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
     env_file:
       - ./grafana/config.monitoring
+    depends_on: 
+      - prometheus
+  smtp:
+    image: bytemark/smtp
+    ports: 
+      - 25
+      
     

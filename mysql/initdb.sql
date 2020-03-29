@@ -1,3 +1,7 @@
+CREATE database if not exists billie;
+
+USE billie;
+
 CREATE TABLE if not exists `invoices` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
