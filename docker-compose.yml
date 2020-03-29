@@ -30,8 +30,6 @@ services:
     volumes:
       - ./prometheus-sql/prometheus-sql.yml:/prometheus-sql.yml
       - ./prometheus-sql/queries.yml:/queries.yml
-    # links:
-    #   - "sqlagent:sqlagent"
     depends_on: 
       - mysql
   prometheus:
@@ -42,25 +40,26 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/simple.rules:/etc/prometheus/simple.rules
-    # links:
-    #   - "sqlagent:sqlagent"
     depends_on: 
       - prometheus-sql
   grafana:
     image: grafana/grafana
     ports: 
       - 3000:3000
-    # links:
-    #   - prometheus:prometheus
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
     env_file:
       - ./grafana/config.monitoring
     depends_on: 
       - prometheus
-  smtp:
-    image: bytemark/smtp
-    ports: 
-      - 25
-      
+  alertmanager:
+    image: prom/alertmanager
+    command: --config.file=/prometheus/alertmanager.yml
+    ports:
+      - 9093:9093
+    volumes:
+      - ./alertmanager/alertmanager.yml:/prometheus/alertmanager.yml
+      - ./alertmanager/email-template.tmpl:/etc/prometheus/email-template.tmpl
+
+
     

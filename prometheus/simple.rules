@@ -9,6 +9,7 @@ groups:
       severity: warning 
     for: 60s
     annotations: 
+      value: "{{ $value }}"
       summary: "Some processed record(s) are not updated in data table"
       description: "Run this query on DB to find the records which do not have processed data - 
                   SELECT * FROM invoices WHERE invoices.state = 'processed' 
@@ -22,6 +23,7 @@ groups:
       severity: warning
     for: 60s
     annotations: 
+      value: "{{ $value }}"
       summary: "Some record(s) are not processed for more than 5 days"
       description: "Run this query on DB to find the records which are idle for more than 5 days
                   SELECT count(*) from invoices where DATEDIFF(NOW(), created_at) >= 5 ; "
