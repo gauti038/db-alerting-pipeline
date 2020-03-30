@@ -1,6 +1,8 @@
 # Start command
 
 ```sh
+$ git clone git@github.com:gauti038/db-alerting-pipeline.git
+$ cd db-alerting-pipeline
 $ docker-compose up 
 ```
 
