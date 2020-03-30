@@ -10,11 +10,11 @@ Challenges and some issues we might face when setting up office on Mars in 2120
     Each might have a different set of rules for a fintech company. 
     So divide teams to offer and customize the product to cater to each region
 
-3. Hi speed interet connection between Earth and Mars with minimum delay (more than speed of light) 180 seconds delay - no video/audio call possible - data sync errors
+3. High speed interet connection between Earth and Mars with minimum delay (speed of light is the limit) 180 seconds delay - no video/audio call possible - data sync errors
     Due to the distance between Mars and Earth, the fastest possible communication is about 180 seconds. 
     So no video call or audio calls possible. Email communications or video messages are the key.
     Even business decisions must be taken remotely. Single hardest hurdle which can't be solved. 
-    So Mars team, eventhough a part of same comany, works relatively in isolation.
+    So Mars team, eventhough a part of same comany, works relatively in complete isolation.
     Even Employees from Earth are totally cutoff from family except for video calls with lag of 3 minutes. 
 
 4. Working infrastructure on Mars environment 
