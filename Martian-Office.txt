@@ -1,0 +1,71 @@
+1. Language classes to sales to learn the local Languages of Mars 
+    Martians might have different species or different cultures. 
+    So inorder to do business with them, it is essential to learn their prominent languages.
+    Modify our software to include language support.
+
+2. Split Mars into various geographical locations and assign teams accordingly
+    Mars, much like Earth might have different countries or porvinces. 
+    Each might have a different set of rules for a fintech company. 
+    So divide teams to offer and customize the product to cater to each region
+
+3. Hi speed interet connection between Earth and Mars with minimum delay (more than speed of light) 180 seconds delay - no video/audio call possible - data sync errors
+    Due to the distance between Mars and Earth, the fastest possible communication is about 180 seconds. 
+    So no video call or audio calls possible. Email communications or video messages are the key.
+    Even business decisions must be taken remotely. Single hardest hurdle which can't be solved. 
+    So Mars team, eventhough a part of same comany, works relatively in isolation.
+    Even Employees from Earth are totally cutoff from family except for video calls with lag of 3 minutes. 
+
+4. Working infrastructure on Mars environment 
+    Humans and Martians must build some form of bridge to interact with hardwares of each other. 
+    Servers, mobile phones, laptops might be significantly different from each other due to temparature, radiation, oxygen levels etc.. 
+
+5. Team lunches with clients - food preferences, temparature, clothes, 
+    Inclusive atmosphere where Martians and Humans interact with each other. 
+    Team lunches might get little awkward due to food habits, workplace temparature, fashion/nudity.
+
+6. Local hiring 
+    Need to hire Martians into the office. 
+    Bring in locals and helps bridge cultural gaps in our understanding.
+
+7. Threat from local competition 
+    There will always be local competition or local replicas. 
+    Locals are always better at interactions and hence business deals. 
+
+8. Capital movement, currency exchange 
+    Movement of money from Earth to Mars must also be taken care of. 
+    Currency needs to be standardized at a central bank along with daily exchange rates
+
+9. Visa issues 
+    Employees must get valid visas or Blue cards to work in Mars. 
+
+10. Diseases, immunity, medication, health insurance
+    Everyone might need mandatory medication or vaccination at regular intervals.
+    Insurance to cover regions on Mars. 
+
+11. Species specific local rules 
+    Each species might decide 
+
+12. Day Light savings, Time zone arrangement , seasons 
+    Time zone differences between Earth and Mars. Each day on Mars is 37 minutes longer on Mars. 
+    Mars might also have its own day light savings depending on the region of Mars.
+
+13. Working hours , weekdays on Mars will be different 
+    Mars uses Darian Calender which is very different from the one followed on Earth. 
+    Dates might get confusing because of this and the changing time zone differences.
+
+14. Resistence from local business 
+    Like any new changes, our business might also face Resistence from local business owners.
+    During inital years, need to tread a fine line balancing profits and local PR.
+
+15. Racial divide among species 
+    Race/species might become an issue in a multicultural workspace. 
+
+16. Exchange employees 
+    Humans might want to settle on Mars or visit Mars  or Martians to Earth. 
+    Handle such travels and business meetings appropriately.
+
+17. Personal Lives inter mixing of species 
+    Due to living/moving to new planet, there might be discomforts.
+    Sudden change of food, water, shelter might result in depression or other mental health issues. 
+    Need to have restaurants or vegetables from Earth available at some places on Mars. 
+
