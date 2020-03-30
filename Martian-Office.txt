@@ -1,3 +1,5 @@
+Challenges and some issues we might face when setting up office on Mars in 2120
+
 1. Language classes to sales to learn the local Languages of Mars 
     Martians might have different species or different cultures. 
     So inorder to do business with them, it is essential to learn their prominent languages.
@@ -43,10 +45,10 @@
     Insurance to cover regions on Mars. 
 
 11. Species specific local rules 
-    Each species might decide 
+    Each species might decide on different set of rules or working cultures.
 
 12. Day Light savings, Time zone arrangement , seasons 
-    Time zone differences between Earth and Mars. Each day on Mars is 37 minutes longer on Mars. 
+    Time zone differences between Earth and Mars. Each day on Mars is 37 minutes longer on Mars than Earth. 
     Mars might also have its own day light savings depending on the region of Mars.
 
 13. Working hours , weekdays on Mars will be different 
@@ -64,7 +66,7 @@
     Humans might want to settle on Mars or visit Mars  or Martians to Earth. 
     Handle such travels and business meetings appropriately.
 
-17. Personal Lives inter mixing of species 
+17. Personal Lives and inter mixing of species 
     Due to living/moving to new planet, there might be discomforts.
     Sudden change of food, water, shelter might result in depression or other mental health issues. 
     Need to have restaurants or vegetables from Earth available at some places on Mars. 
